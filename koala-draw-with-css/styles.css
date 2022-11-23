@@ -1,0 +1,125 @@
+/* Creating Var*/
+:root {
+    --head-color: #a9bcd2;
+    --background-dark: #202020;
+    --ear-color: #7691a7;
+    --nose-color: #222E40;
+    --black-color: #000;
+    --white-color: #ffff;
+}
+  
+/* Reset Css*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.head {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: var(--head-color);
+
+  border-radius: 50%;
+}
+
+.head::before,
+.head::after {
+  content: "";
+
+  width: 170px;
+  height: 180px;
+
+  border-radius: 50%;
+  border: 10px solid var(--head-color);
+
+  position: absolute;
+  z-index: -1;
+
+  background-color: var(--ear-color);
+}
+
+.head::before {
+  right: -90px;
+  bottom: 150px;
+}
+
+.head::after {
+  left: -90px;
+  bottom: 150px;
+}
+
+.face {
+  width: 400px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  z-index: 1;
+
+  position: absolute;
+}
+
+.eyes::before,
+.eyes::after {
+  content: "";
+
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+
+  z-index: -1;
+  position: absolute;
+  background-color: var(--white-color);
+}
+
+.eyes::before {
+  right: 45px;
+}
+
+.eyes::after {
+  left: 45px;
+}
+
+.eyes div {
+  background: var(--black-color);
+
+  width: 30px;
+  height: 40px;
+
+  border-radius: 50%;
+}
+
+.nose {
+    background: var(--nose-color);
+
+    width: 95px;
+    height: 190px;
+  
+    border-radius: 45%;
+    z-index: 1;
+
+    bottom: 50px;
+    position: absolute;
+}
